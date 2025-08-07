@@ -24,37 +24,8 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 221.2 83.2% 53.3%;
     --radius: 0.5rem;
-    
-    /* Premium Braj colors */
-    --deep-blue: 210 65% 15%;
-    --premium-gold: 45 100% 50%;
-    --saffron: 35 100% 50%;
-    --soft-cream: 48 100% 88%;
-    --luxury-gold: 45 85% 65%;
     --font-inter: 'Inter', sans-serif;
     --font-playfair: 'Playfair Display', serif;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 217.2 91.2% 59.8%;
-    --primary-foreground: 222.2 84% 4.9%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 224.3 76.3% 94.1%;
   }
 }
 
@@ -63,99 +34,166 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-temple-white text-vrindavan-blue;
     font-family: var(--font-inter);
+    line-height: 1.7;
   }
   
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-playfair);
+    line-height: 1.2;
+    font-weight: 600;
   }
 }
 
 @layer utilities {
-  .text-deep-blue {
-    color: hsl(var(--deep-blue));
-  }
-  .bg-deep-blue {
-    background-color: hsl(var(--deep-blue));
-  }
-  .text-premium-gold {
-    color: hsl(var(--premium-gold));
-  }
-  .bg-premium-gold {
-    background-color: hsl(var(--premium-gold));
-  }
-  .text-saffron {
-    color: hsl(var(--saffron));
-  }
-  .bg-saffron {
-    background-color: hsl(var(--saffron));
-  }
-  .text-soft-cream {
-    color: hsl(var(--soft-cream));
-  }
-  .bg-soft-cream {
-    background-color: hsl(var(--soft-cream));
-  }
-  .text-luxury-gold {
-    color: hsl(var(--luxury-gold));
-  }
-  .bg-luxury-gold {
-    background-color: hsl(var(--luxury-gold));
-  }
   .font-playfair {
     font-family: var(--font-playfair);
   }
   .font-inter {
     font-family: var(--font-inter);
   }
+  
+  .text-shadow-divine {
+    text-shadow: 0 2px 4px rgba(255, 215, 0, 0.3);
+  }
 }
 
-/* Premium geometric background patterns */
-.geometric-bg {
-  background-image: 
-    linear-gradient(45deg, transparent 40%, rgba(255, 177, 0, 0.03) 50%, transparent 60%),
-    linear-gradient(-45deg, transparent 40%, rgba(255, 177, 0, 0.03) 50%, transparent 60%);
-  background-size: 60px 60px;
+@layer components {
+  /* Divine Seva Card Styles */
+  .seva-card {
+    @apply bg-temple-white rounded-2xl p-8 border-2 transition-all duration-500;
+    border-image: linear-gradient(45deg, #FFD700, #FFB217, #FFD700) 1;
+    box-shadow: 0 8px 32px rgba(26, 35, 126, 0.1);
+  }
+
+  .seva-card:hover {
+    @apply transform -translate-y-1;
+    box-shadow: 0 12px 40px rgba(26, 35, 126, 0.15);
+    border-color: #FFD700;
+  }
+
+  .seva-card-peacock {
+    @apply bg-gradient-to-br from-peacock-green/5 to-emerald-green/5;
+    border-color: #217159;
+  }
+
+  .seva-card-marigold {
+    @apply bg-gradient-to-br from-marigold/5 to-saffron/5;
+    border-color: #FFB217;
+  }
+
+  .seva-card-radha {
+    @apply bg-gradient-to-br from-radha-pink/5 to-lotus-pink/5;
+    border-color: #FF69B4;
+  }
+
+  /* Divine Buttons */
+  .seva-button {
+    @apply bg-marigold-gradient text-vrindavan-blue font-semibold px-10 py-5 rounded-xl transition-all duration-300 border-0 text-lg;
+    box-shadow: 0 6px 25px rgba(255, 178, 23, 0.5);
+  }
+
+  .seva-button:hover {
+    @apply transform -translate-y-2 animate-divine-glow;
+    box-shadow: 0 12px 35px rgba(255, 178, 23, 0.7);
+  }
+
+  .seva-button-outline {
+    @apply border-2 text-marigold bg-transparent font-semibold px-10 py-5 rounded-xl transition-all duration-300 text-lg;
+    border-color: #FFB217;
+    border-width: 2px;
+    box-shadow: 0 4px 20px rgba(255, 178, 23, 0.2);
+  }
+
+  .seva-button-outline:hover {
+    @apply bg-marigold text-vrindavan-blue transform -translate-y-2;
+    box-shadow: 0 8px 30px rgba(255, 178, 23, 0.5);
+  }
+
+  /* Divine Section Backgrounds */
+  .vrindavan-section {
+    @apply bg-vrindavan-gradient text-temple-white;
+    position: relative;
+  }
+
+  .vrindavan-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFD700' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .peacock-section {
+    @apply bg-peacock-gradient text-temple-white;
+  }
+
+  .marigold-section {
+    @apply bg-cream-gold text-vrindavan-blue;
+  }
+
+  /* Divine Typography */
+  .divine-heading {
+    @apply font-playfair text-4xl md:text-6xl font-bold text-shadow-divine;
+    background: linear-gradient(135deg, #FFD700, #FFB217);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .sanskrit-text {
+    @apply text-divine-gold font-medium text-xl tracking-wider;
+    font-family: 'Noto Sans Devanagari', sans-serif;
+  }
+
+  /* Spiritual Accents */
+  .lotus-divider {
+    position: relative;
+    text-align: center;
+    margin: 3rem 0;
+  }
+
+  .lotus-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #FFD700, transparent);
+  }
+
+  .lotus-divider::after {
+    content: '🪷';
+    background: #FEFEFE;
+    padding: 0 1rem;
+    font-size: 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .peacock-accent::before {
+    content: '🦚';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 1.5rem;
+    opacity: 0.6;
+  }
+
+  .flute-accent::before {
+    content: '🎵';
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    font-size: 1.2rem;
+    opacity: 0.7;
+    color: #FFD700;
+  }
 }
 
-.subtle-pattern {
-  background-image: radial-gradient(circle at 25% 25%, rgba(255, 177, 0, 0.05) 0%, transparent 50%);
-  background-size: 100px 100px;
-}
-
-/* Clean hover effects */
-.premium-hover {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.premium-hover:hover {
-  transform: translateY(-2px);
-}
-
-/* Remove all animations except subtle fades */
-.fade-in {
-  animation: fadeIn 0.6s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Premium button styles */
-.btn-premium {
-  @apply bg-saffron text-deep-blue font-semibold px-8 py-4 rounded-lg border-0 transition-all duration-300;
-}
-
-.btn-premium:hover {
-  @apply bg-premium-gold;
-}
-
-.btn-outline-premium {
-  @apply border-2 border-premium-gold text-premium-gold bg-transparent font-semibold px-8 py-4 rounded-lg transition-all duration-300;
-}
-
-.btn-outline-premium:hover {
-  @apply bg-premium-gold text-deep-blue;
-}
+/* Import Devanagari font for Sanskrit text */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');

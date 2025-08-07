@@ -1,17 +1,15 @@
 import { HeroSection } from "@/components/hero-section"
-import { FeaturedServices } from "@/components/featured-services"
-import { WhyChooseUs } from "@/components/why-choose-us"
-import { Testimonials } from "@/components/testimonials"
-import { CTABanner } from "@/components/cta-banner"
+import { AstrologerSection } from "@/components/astrologer-section"
+import { SevaServices } from "@/components/seva-services"
+import { BookingSection } from "@/components/booking-section"
 
 export default function HomePage() {
   return (
-    <div className="pt-16">
+    <div className="pt-20">
       <HeroSection />
-      <FeaturedServices />
-      <WhyChooseUs />
-      <Testimonials />
-      <CTABanner />
+      <AstrologerSection />
+      <SevaServices />
+      <BookingSection />
     </div>
   )
 }

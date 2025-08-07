@@ -1,7 +1,5 @@
 import type { Config } from "tailwindcss";
 
-// all in fixtures is set to tailwind v3 as interims solutions
-
 const config: Config = {
     darkMode: ["class"],
     content: [
@@ -67,17 +65,30 @@ const config: Config = {
   				border: 'hsl(var(--sidebar-border))',
   				ring: 'hsl(var(--sidebar-ring))'
   			},
-  			// Premium Braj colors
-  			'deep-blue': 'hsl(var(--deep-blue))',
-  			'premium-gold': 'hsl(var(--premium-gold))',
-  			'saffron': 'hsl(var(--saffron))',
-  			'soft-cream': 'hsl(var(--soft-cream))',
-  			'luxury-gold': 'hsl(var(--luxury-gold))'
+  			// Mathura-Vrindavan Divine Colors
+  			'royal-blue': '#1A237E',
+  			'vrindavan-blue': '#152948',
+  			'peacock-green': '#217159',
+  			'emerald-green': '#187266',
+  			'marigold': '#FFB217',
+  			'saffron': '#FBA834',
+  			'radha-pink': '#FF69B4',
+  			'lotus-pink': '#E5397B',
+  			'divine-gold': '#FFD700',
+  			'cream-gold': '#FFEDCE',
+  			'yamuna-blue': '#1E3A8A',
+  			'temple-white': '#FEFEFE'
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
+  		},
+  		backgroundImage: {
+  			'vrindavan-gradient': 'linear-gradient(135deg, #1A237E 0%, #152948 50%, #1E3A8A 100%)',
+  			'peacock-gradient': 'linear-gradient(135deg, #217159 0%, #187266 100%)',
+  			'marigold-gradient': 'linear-gradient(135deg, #FFB217 0%, #FBA834 100%)',
+  			'radha-gradient': 'linear-gradient(135deg, #FF69B4 0%, #E5397B 100%)'
   		},
   		keyframes: {
   			'accordion-down': {
@@ -95,11 +106,16 @@ const config: Config = {
   				to: {
   					height: '0'
   				}
+  			},
+  			'divine-glow': {
+  				'0%, 100%': { boxShadow: '0 0 20px rgba(255, 215, 0, 0.3)' },
+  				'50%': { boxShadow: '0 0 30px rgba(255, 215, 0, 0.5)' }
   			}
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
+  			'accordion-up': 'accordion-up 0.2s ease-out',
+  			'divine-glow': 'divine-glow 3s ease-in-out infinite'
   		}
   	}
   },
