@@ -25,13 +25,14 @@
     --ring: 221.2 83.2% 53.3%;
     --radius: 0.5rem;
     
-    /* Custom Braj colors */
-    --saffron: 30 100% 60%;
-    --deep-blue: 220 83% 20%;
-    --gold: 45 100% 50%;
-    --lotus-pink: 340 60% 80%;
-    --emerald: 142 71% 45%;
-    --cream: 60 100% 95%;
+    /* Premium Braj colors */
+    --deep-blue: 210 65% 15%;
+    --premium-gold: 45 100% 50%;
+    --saffron: 35 100% 50%;
+    --soft-cream: 48 100% 88%;
+    --luxury-gold: 45 85% 65%;
+    --font-inter: 'Inter', sans-serif;
+    --font-playfair: 'Playfair Display', serif;
   }
 
   .dark {
@@ -63,67 +64,98 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-inter);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-playfair);
   }
 }
 
 @layer utilities {
-  .text-saffron {
-    color: hsl(var(--saffron));
-  }
-  .bg-saffron {
-    background-color: hsl(var(--saffron));
-  }
   .text-deep-blue {
     color: hsl(var(--deep-blue));
   }
   .bg-deep-blue {
     background-color: hsl(var(--deep-blue));
   }
-  .text-gold {
-    color: hsl(var(--gold));
+  .text-premium-gold {
+    color: hsl(var(--premium-gold));
   }
-  .bg-gold {
-    background-color: hsl(var(--gold));
+  .bg-premium-gold {
+    background-color: hsl(var(--premium-gold));
   }
-  .text-lotus-pink {
-    color: hsl(var(--lotus-pink));
+  .text-saffron {
+    color: hsl(var(--saffron));
   }
-  .bg-lotus-pink {
-    background-color: hsl(var(--lotus-pink));
+  .bg-saffron {
+    background-color: hsl(var(--saffron));
   }
-  .text-cream {
-    color: hsl(var(--cream));
+  .text-soft-cream {
+    color: hsl(var(--soft-cream));
   }
-  .bg-cream {
-    background-color: hsl(var(--cream));
+  .bg-soft-cream {
+    background-color: hsl(var(--soft-cream));
   }
-  .font-cinzel {
-    font-family: var(--font-cinzel);
+  .text-luxury-gold {
+    color: hsl(var(--luxury-gold));
+  }
+  .bg-luxury-gold {
+    background-color: hsl(var(--luxury-gold));
+  }
+  .font-playfair {
+    font-family: var(--font-playfair);
+  }
+  .font-inter {
+    font-family: var(--font-inter);
   }
 }
 
-.spiritual-glow {
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+/* Premium geometric background patterns */
+.geometric-bg {
+  background-image: 
+    linear-gradient(45deg, transparent 40%, rgba(255, 177, 0, 0.03) 50%, transparent 60%),
+    linear-gradient(-45deg, transparent 40%, rgba(255, 177, 0, 0.03) 50%, transparent 60%);
+  background-size: 60px 60px;
 }
 
-.mandala-bg {
-  background-image: radial-gradient(circle, rgba(255, 153, 51, 0.1) 0%, transparent 70%);
+.subtle-pattern {
+  background-image: radial-gradient(circle at 25% 25%, rgba(255, 177, 0, 0.05) 0%, transparent 50%);
+  background-size: 100px 100px;
 }
 
-@keyframes lotus-glow {
-  0%, 100% { opacity: 0.7; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.05); }
+/* Clean hover effects */
+.premium-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.lotus-animation {
-  animation: lotus-glow 3s ease-in-out infinite;
+.premium-hover:hover {
+  transform: translateY(-2px);
 }
 
-@keyframes om-pulse {
-  0%, 100% { opacity: 0.8; }
-  50% { opacity: 1; }
+/* Remove all animations except subtle fades */
+.fade-in {
+  animation: fadeIn 0.6s ease-in-out;
 }
 
-.om-animation {
-  animation: om-pulse 2s ease-in-out infinite;
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Premium button styles */
+.btn-premium {
+  @apply bg-saffron text-deep-blue font-semibold px-8 py-4 rounded-lg border-0 transition-all duration-300;
+}
+
+.btn-premium:hover {
+  @apply bg-premium-gold;
+}
+
+.btn-outline-premium {
+  @apply border-2 border-premium-gold text-premium-gold bg-transparent font-semibold px-8 py-4 rounded-lg transition-all duration-300;
+}
+
+.btn-outline-premium:hover {
+  @apply bg-premium-gold text-deep-blue;
 }

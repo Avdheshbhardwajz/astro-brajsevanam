@@ -3,70 +3,59 @@ import Image from "next/image"
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/vrindavan-dusk-temple.png"
-          alt="Vrindavan Temple at Dusk"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-deep-blue/60 via-deep-blue/40 to-deep-blue/60" />
-      </div>
-
-      {/* Floating Elements */}
-      <div className="absolute top-20 left-10 text-6xl om-animation opacity-30">
+    <section className="relative min-h-screen flex items-center bg-deep-blue overflow-hidden">
+      {/* Subtle geometric background */}
+      <div className="absolute inset-0 geometric-bg opacity-30" />
+      
+      {/* Single spiritual icon - minimal Om */}
+      <div className="absolute top-32 right-20 text-premium-gold/20 text-8xl font-light">
         ॐ
-      </div>
-      <div className="absolute bottom-20 right-10 text-4xl lotus-animation opacity-40">
-        🪷
-      </div>
-      <div className="absolute top-1/3 right-20 text-3xl opacity-20">
-        🦚
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
-        <div className="mb-6">
-          <span className="text-gold text-lg font-medium">श्री कृष्ण की कृपा से</span>
-          <p className="text-cream/80 text-sm mt-1">By the Grace of Lord Krishna</p>
-        </div>
-        
-        <h1 className="font-cinzel text-4xl md:text-6xl lg:text-7xl font-bold text-gold mb-6 leading-tight">
-          Discover Your Cosmic Path
-          <span className="block text-cream mt-2">with Braj Jyotish</span>
-        </h1>
-        
-        <p className="text-cream text-lg md:text-xl mb-8 max-w-2xl mx-auto leading-relaxed">
-          Guided by Vedic wisdom and divine spirituality, unlock the secrets of your destiny 
-          through authentic astrological insights rooted in the sacred traditions of Braj.
-        </p>
+      <div className="container mx-auto px-6 lg:px-12 relative z-10">
+        <div className="max-w-4xl">
+          <div className="mb-8">
+            <span className="text-luxury-gold text-xl font-medium tracking-wide">
+              श्री कृष्ण की कृपा से
+            </span>
+            <p className="text-soft-cream/80 text-sm mt-2 tracking-wide">
+              By the Grace of Lord Krishna
+            </p>
+          </div>
+          
+          <h1 className="font-playfair text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 leading-tight">
+            Discover Your
+            <span className="block text-premium-gold mt-2">Cosmic Path</span>
+          </h1>
+          
+          <p className="text-soft-cream text-xl md:text-2xl mb-12 max-w-3xl leading-relaxed font-light">
+            Guided by authentic Vedic wisdom and divine spirituality, 
+            unlock the secrets of your destiny through sacred astrological insights.
+          </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button 
-            size="lg" 
-            className="bg-saffron hover:bg-saffron/90 text-deep-blue font-semibold px-8 py-3 text-lg spiritual-glow"
-          >
-            Get Your Horoscope
-          </Button>
-          <Button 
-            size="lg" 
-            variant="outline" 
-            className="border-gold text-gold hover:bg-gold hover:text-deep-blue px-8 py-3 text-lg"
-          >
-            Book a Consultation
-          </Button>
-        </div>
+          <div className="flex flex-col sm:flex-row gap-6">
+            <Button className="btn-premium text-xl px-12 py-6">
+              Get Your Horoscope
+            </Button>
+            <Button className="btn-outline-premium text-xl px-12 py-6">
+              Book Consultation
+            </Button>
+          </div>
 
-        <div className="mt-12 text-center">
-          <p className="text-cream/60 text-sm mb-2">Trusted by thousands of devotees worldwide</p>
-          <div className="flex justify-center items-center space-x-1">
-            {[...Array(5)].map((_, i) => (
-              <span key={i} className="text-gold text-lg">⭐</span>
-            ))}
-            <span className="text-cream/80 ml-2">4.9/5 from 2,500+ readings</span>
+          <div className="mt-16 flex items-center space-x-12 text-soft-cream/60">
+            <div className="text-center">
+              <div className="text-3xl font-bold text-premium-gold">2500+</div>
+              <div className="text-sm tracking-wide">Happy Clients</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-premium-gold">15+</div>
+              <div className="text-sm tracking-wide">Years Experience</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-premium-gold">4.9★</div>
+              <div className="text-sm tracking-wide">Rating</div>
+            </div>
           </div>
         </div>
       </div>

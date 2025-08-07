@@ -1,4 +1,4 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 
 const services = [
@@ -34,46 +34,42 @@ const services = [
 
 export function FeaturedServices() {
   return (
-    <section className="py-20 bg-gradient-to-b from-cream to-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="font-cinzel text-4xl md:text-5xl font-bold text-deep-blue mb-4">
+    <section className="py-32 bg-white">
+      <div className="container mx-auto px-6 lg:px-12">
+        <div className="text-center mb-20">
+          <h2 className="font-playfair text-5xl md:text-6xl font-bold text-deep-blue mb-6">
             Sacred Services
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Explore our divine offerings rooted in ancient Vedic traditions and blessed by the wisdom of Braj
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Explore our divine offerings rooted in ancient Vedic traditions
           </p>
-          <div className="mt-4">
-            <span className="text-saffron font-medium">सेवाएं</span>
-            <span className="text-gray-500 text-sm ml-2">Our Services</span>
+          <div className="mt-6">
+            <span className="text-saffron font-medium text-lg tracking-wide">सेवाएं</span>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {services.map((service, index) => (
             <Card 
               key={index} 
-              className="group hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border-2 border-transparent hover:border-gold/30 bg-white"
+              className="premium-hover border-0 bg-soft-cream/30 rounded-2xl overflow-hidden"
             >
-              <CardHeader className="text-center pb-4">
-                <div className="text-6xl mb-4 group-hover:scale-110 transition-transform duration-300">
+              <CardHeader className="text-center py-12 bg-gradient-to-b from-deep-blue to-deep-blue/90">
+                <div className="text-6xl mb-6">
                   {service.icon}
                 </div>
-                <CardTitle className="font-cinzel text-xl text-deep-blue mb-2">
+                <CardTitle className="font-playfair text-2xl text-white mb-3">
                   {service.title}
                 </CardTitle>
-                <div className="text-center">
-                  <span className="text-saffron font-medium text-lg">{service.sanskrit}</span>
-                  <p className="text-gray-500 text-xs">{service.translation}</p>
+                <div className="text-premium-gold font-medium text-lg tracking-wide">
+                  {service.sanskrit}
                 </div>
               </CardHeader>
-              <CardContent className="text-center">
-                <CardDescription className="text-gray-600 mb-6 leading-relaxed">
+              <CardContent className="p-12 text-center">
+                <p className="text-gray-700 mb-8 leading-relaxed text-lg">
                   {service.description}
-                </CardDescription>
-                <Button 
-                  className="bg-lotus-pink hover:bg-lotus-pink/90 text-deep-blue font-semibold w-full"
-                >
+                </p>
+                <Button className="btn-premium w-full text-lg py-4">
                   Explore Now
                 </Button>
               </CardContent>

@@ -3,7 +3,7 @@ import Image from "next/image"
 
 export function CTABanner() {
   return (
-    <section className="relative py-20 overflow-hidden">
+    <section className="relative py-32 overflow-hidden bg-deep-blue">
       {/* Background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-deep-blue" />
@@ -31,34 +31,31 @@ export function CTABanner() {
         ॐ
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center max-w-4xl mx-auto">
-          <div className="mb-6">
-            <span className="text-gold text-lg font-medium">आपका भाग्य आपका इंतज़ार कर रहा है</span>
-            <p className="text-cream/80 text-sm mt-1">Your Destiny Awaits You</p>
+      <div className="container mx-auto px-6 lg:px-12 relative z-10">
+        <div className="text-center max-w-5xl mx-auto">
+          <div className="mb-8">
+            <span className="text-luxury-gold text-xl font-medium tracking-wide">
+              आपका भाग्य आपका इंतज़ार कर रहा है
+            </span>
+            <p className="text-soft-cream/80 text-sm mt-2 tracking-wide">
+              Your Destiny Awaits You
+            </p>
           </div>
           
-          <h2 className="font-cinzel text-4xl md:text-6xl font-bold text-gold mb-6">
-            Unlock Your Destiny Today
+          <h2 className="font-playfair text-5xl md:text-7xl font-bold text-white mb-8">
+            Unlock Your Destiny
           </h2>
           
-          <p className="text-cream text-lg md:text-xl mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-soft-cream text-xl md:text-2xl mb-12 max-w-4xl mx-auto leading-relaxed font-light">
             Take the first step towards understanding your cosmic purpose. 
-            Let the divine wisdom of Braj guide you to a life of fulfillment and spiritual growth.
+            Let the divine wisdom of Braj guide you to a life of fulfillment.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button 
-              size="lg" 
-              className="bg-gold hover:bg-gold/90 text-deep-blue font-bold px-12 py-4 text-lg spiritual-glow"
-            >
-              Book Your Reading Now
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <Button className="btn-premium text-xl px-16 py-6">
+              Book Your Reading
             </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="border-gold text-gold hover:bg-gold hover:text-deep-blue px-12 py-4 text-lg"
-            >
+            <Button className="btn-outline-premium text-xl px-16 py-6">
               Explore Services
             </Button>
           </div>

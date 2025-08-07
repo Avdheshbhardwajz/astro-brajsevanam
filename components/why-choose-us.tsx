@@ -6,12 +6,6 @@ const features = [
     sanskrit: "वैदिक ज्ञान"
   },
   {
-    icon: "🙏",
-    title: "Personalized Guidance",
-    description: "Individual attention and customized solutions for your unique spiritual journey",
-    sanskrit: "व्यक्तिगत मार्गदर्शन"
-  },
-  {
     icon: "✨",
     title: "Divine Insights",
     description: "Revelations blessed by the divine grace of Lord Krishna and Radha Rani",
@@ -19,40 +13,40 @@ const features = [
   },
   {
     icon: "🕉️",
-    title: "Trusted Astrologers",
+    title: "Trusted Guidance",
     description: "Experienced practitioners devoted to serving with compassion and wisdom",
-    sanskrit: "विश्वसनीय ज्योतिषी"
+    sanskrit: "विश्वसनीय मार्गदर्शन"
   }
 ]
 
 export function WhyChooseUs() {
   return (
-    <section className="py-20 bg-gradient-to-r from-cream via-saffron/10 to-cream mandala-bg">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="font-cinzel text-4xl md:text-5xl font-bold text-deep-blue mb-4">
+    <section className="py-32 bg-soft-cream/50 subtle-pattern">
+      <div className="container mx-auto px-6 lg:px-12">
+        <div className="text-center mb-20">
+          <h2 className="font-playfair text-5xl md:text-6xl font-bold text-deep-blue mb-6">
             Why Choose Braj Jyotish
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Experience the divine difference of authentic Vedic astrology rooted in the sacred traditions of Braj
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Experience the divine difference of authentic Vedic astrology
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
           {features.map((feature, index) => (
-            <div key={index} className="text-center group">
-              <div className="w-24 h-24 mx-auto mb-6 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 border-4 border-gold/20 group-hover:border-gold/50">
-                <span className="text-4xl group-hover:scale-110 transition-transform duration-300">
+            <div key={index} className="text-center">
+              <div className="w-32 h-32 mx-auto mb-8 bg-white rounded-full flex items-center justify-center border-4 border-premium-gold/20">
+                <span className="text-5xl">
                   {feature.icon}
                 </span>
               </div>
-              <h3 className="font-cinzel text-xl font-bold text-deep-blue mb-2">
+              <h3 className="font-playfair text-2xl font-bold text-deep-blue mb-4">
                 {feature.title}
               </h3>
-              <div className="mb-3">
-                <span className="text-saffron font-medium">{feature.sanskrit}</span>
+              <div className="mb-4">
+                <span className="text-saffron font-medium text-lg tracking-wide">{feature.sanskrit}</span>
               </div>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-700 leading-relaxed text-lg">
                 {feature.description}
               </p>
             </div>

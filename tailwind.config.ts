@@ -12,6 +12,10 @@ const config: Config = {
   ],
   theme: {
   	extend: {
+  		fontFamily: {
+  			inter: ['var(--font-inter)'],
+  			playfair: ['var(--font-playfair)'],
+  		},
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
@@ -62,7 +66,13 @@ const config: Config = {
   				'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
   				border: 'hsl(var(--sidebar-border))',
   				ring: 'hsl(var(--sidebar-ring))'
-  			}
+  			},
+  			// Premium Braj colors
+  			'deep-blue': 'hsl(var(--deep-blue))',
+  			'premium-gold': 'hsl(var(--premium-gold))',
+  			'saffron': 'hsl(var(--saffron))',
+  			'soft-cream': 'hsl(var(--soft-cream))',
+  			'luxury-gold': 'hsl(var(--luxury-gold))'
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
